@@ -8,7 +8,7 @@ onMounted(() => {
   themeChange(false)
 })
 
-const themes = themesOrder.values()
+const themes = themesOrder
 const count = ref(0)
 </script>
 
