@@ -20,7 +20,14 @@ const count = ref(0)
             :key="theme"
             :data-theme="theme"
             :data-set-theme="theme"
-            class="border-base-content/20 hover:border-base-content/60 overflow-hidden rounded-lg border outline-offset-1 outline-2  outline-transparent outline-base-content!"
+            class="border-base-content/20
+            hover:border-base-content/60
+            hover:outline-3
+            overflow-hidden
+            rounded-lg border
+            outline-offset-1
+            outline-2
+            outline-transparent"
         >
       <span class="text-xs font-black uppercase tracking-widest text-base-content">
         {{ theme }}

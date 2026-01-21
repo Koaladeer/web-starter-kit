@@ -1,10 +1,12 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+import Homepage from './components/Homepage.vue'
 import {themeChange} from 'theme-change'
 import {onMounted} from "vue";
 import { useRouter } from 'vue-router'
 const router = useRouter()
+import { useStore} from "./stores/store.js";
 
+const store = useStore()
 function goTohw1() {
   router.push(`/hw`)
 }
@@ -15,7 +17,7 @@ function goTohw2() {
 
 <template>
   <div>
-    <div class="drawer lg:drawer-open">
+    <div class="drawer drawer-open">
       <input id="my-drawer-4" type="checkbox" class="drawer-toggle"/>
       <div class="drawer-content">
         <!-- Navbar -->
@@ -33,12 +35,11 @@ function goTohw2() {
             <strong>Current route path:</strong> {{ $route.fullPath }}
           </div>
         </nav>
-        <RouterView />
+
         <div class="p-4">
-          ello
+          <RouterView />
         </div>
       </div>
-
       <div class="drawer-side is-drawer-close:overflow-visible">
         <label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay"></label>
         <div class="flex min-h-full flex-col items-start bg-base-200 is-drawer-close:w-14 is-drawer-open:w-64">
@@ -58,7 +59,6 @@ function goTohw2() {
                 <span class="is-drawer-close:hidden">Homepage</span>
               </button>
             </li>
-
             <!-- List item -->
             <li>
               <button @click="goTohw2" class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Settings">

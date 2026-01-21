@@ -1,11 +1,11 @@
 import { createMemoryHistory, createRouter } from 'vue-router'
 
-import HelloWorld from '../components/HelloWorld.vue'
-import HelloWorld2 from '../components/HelloWorld2.vue'
+import Homepage from '../components/Homepage.vue'
+import Settings from '../components/Settings.vue'
 
 const routes = [
-    { path: '/hw', component: HelloWorld },
-    { path: '/hw2', component: HelloWorld2 },
+    { path: '/hw', component: Homepage },
+    { path: '/hw2', component: Settings },
 ]
 
 const router = createRouter({
