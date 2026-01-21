@@ -1,17 +1,15 @@
 <script setup>
-import Homepage from './components/Homepage.vue'
-import {themeChange} from 'theme-change'
-import {onMounted} from "vue";
+import Footer from './components/Footer.vue'
 import { useRouter } from 'vue-router'
 const router = useRouter()
 import { useStore} from "./stores/store.js";
 
 const store = useStore()
-function goTohw1() {
-  router.push(`/hw`)
+function goToHomepage() {
+  router.push(`/homepage`)
 }
-function goTohw2() {
-  router.push('/hw2')
+function Settings() {
+  router.push('/settings')
 }
 </script>
 
@@ -32,6 +30,8 @@ function goTohw2() {
             </svg>
           </label>
           <div class="px-4">
+            <p>N1:{{ store.numbers.n1}}</p>
+            <div class="divider divider-horizontal"> </div>
             <strong>Current route path:</strong> {{ $route.fullPath }}
           </div>
         </nav>
@@ -47,7 +47,7 @@ function goTohw2() {
           <ul class="menu w-full grow">
             <!-- List item -->
             <li>
-              <button @click="goTohw1" class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Homepage">
+              <button @click="goToHomepage" class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Homepage">
                 <!-- Home icon -->
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linejoin="round"
                      stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor"
@@ -61,7 +61,7 @@ function goTohw2() {
             </li>
             <!-- List item -->
             <li>
-              <button @click="goTohw2" class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Settings">
+              <button @click="Settings" class="is-drawer-close:tooltip is-drawer-close:tooltip-right" data-tip="Settings">
                 <!-- Settings icon -->
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke-linejoin="round"
                      stroke-linecap="round" stroke-width="2" fill="none" stroke="currentColor"
@@ -78,7 +78,9 @@ function goTohw2() {
         </div>
       </div>
     </div>
+    <Footer />
   </div>
+
 </template>
 
 <style scoped>
