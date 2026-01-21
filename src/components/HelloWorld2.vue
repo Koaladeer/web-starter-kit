@@ -14,18 +14,18 @@ const count = ref(0)
 
 <template>
   <div class="bg-base-100">
-      <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-10 gap-3 p-4">
+      <div class="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-3 p-4">
         <button
             v-for="theme in themes"
             :key="theme"
             :data-theme="theme"
             :data-set-theme="theme"
-            class="border-base-content/20 hover:border-base-content/40 overflow-hidden rounded-lg border outline-2 outline-offset-2 outline-transparent outline-base-content!"
+            class="border-base-content/20 hover:border-base-content/60 overflow-hidden rounded-lg border outline-offset-1 outline-2  outline-transparent outline-base-content!"
         >
-      <span class="text-sm font-black uppercase tracking-widest text-base-content">
+      <span class="text-xs font-black uppercase tracking-widest text-base-content">
         {{ theme }}
       </span>
-          <div class="flex w-full h-10 gap-1 overflow-hidden rounded-lg">
+          <div class="flex w-full h-10 gap-0.5 overflow-hidden rounded-lg">
             <div class="bg-primary flex-1" title="Primary"></div>
             <div class="bg-secondary flex-1" title="Secondary"></div>
             <div class="bg-accent flex-1" title="Accent"></div>
